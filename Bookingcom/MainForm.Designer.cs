@@ -191,6 +191,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 22);
             this.label6.TabIndex = 3;
+            this.label6.Tag = "Гостиница Волга";
             this.label6.Text = "Гостиница \"Волга\"";
             this.label6.Click += new System.EventHandler(this.HotelLabel_Click);
             // 
@@ -203,6 +204,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "Гостиница Волга";
             this.pictureBox2.Click += new System.EventHandler(this.HotelPB_Click);
             // 
             // label5
@@ -212,6 +214,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 22);
             this.label5.TabIndex = 1;
+            this.label5.Tag = "Гостиница Венец";
             this.label5.Text = "Гостиница \"Венец\"";
             this.label5.Click += new System.EventHandler(this.HotelLabel_Click);
             // 
@@ -224,6 +227,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "Гостиница Венец";
             this.pictureBox1.Click += new System.EventHandler(this.HotelPB_Click);
             // 
             // MainForm

@@ -19,13 +19,13 @@ namespace Bookingcom
 
         private void HotelPB_Click(object sender, EventArgs e)
         {
-            HotelForm hotelForm = new HotelForm();
+            HotelForm hotelForm = new HotelForm(pictureBox1.Tag.ToString());
             hotelForm.ShowDialog();
         }
 
         private void HotelLabel_Click(object sender, EventArgs e)
         {
-            HotelForm hotelForm = new HotelForm();
+            HotelForm hotelForm = new HotelForm(label5.Tag.ToString());
             hotelForm.ShowDialog();
         }
     }
