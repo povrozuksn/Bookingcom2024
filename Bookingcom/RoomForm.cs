@@ -12,9 +12,13 @@ namespace Bookingcom
 {
     public partial class RoomForm : Form
     {
-        public RoomForm()
+        public RoomForm(string nameRoom)
         {
             InitializeComponent();
+
+            Text = nameRoom;
+            RoomPictureBox.Load("../../Pictures/" + nameRoom + ".jpg");
+            RoomLabel.Text = nameRoom;
         }
     }
 }

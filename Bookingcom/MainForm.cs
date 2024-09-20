@@ -15,18 +15,33 @@ namespace Bookingcom
         public MainForm()
         {
             InitializeComponent();
+            FiltrPanel.Height = FiltrButton.Height;
         }
 
         private void HotelPB_Click(object sender, EventArgs e)
         {
-            HotelForm hotelForm = new HotelForm(pictureBox1.Tag.ToString());
+            PictureBox pb = (PictureBox)sender;
+            HotelForm hotelForm = new HotelForm(pb.Tag.ToString());
             hotelForm.ShowDialog();
         }
 
         private void HotelLabel_Click(object sender, EventArgs e)
         {
-            HotelForm hotelForm = new HotelForm(label5.Tag.ToString());
+            Label lbl = (Label)sender;
+            HotelForm hotelForm = new HotelForm(lbl.Text.ToString());
             hotelForm.ShowDialog();
+        }
+
+        private void FiltrButton_Click(object sender, EventArgs e)
+        {
+            if(FiltrPanel.Height > 100)
+            {
+                FiltrPanel.Height = FiltrButton.Height;
+            }
+            else
+            {
+                FiltrPanel.Height = 150;
+            }
         }
     }
 }

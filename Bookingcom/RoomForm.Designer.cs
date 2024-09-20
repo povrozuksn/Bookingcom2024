@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.RoomPanel = new System.Windows.Forms.Panel();
-            this.RoomPictureBox = new System.Windows.Forms.PictureBox();
-            this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomDescriptionTB = new System.Windows.Forms.TextBox();
+            this.RoomLabel = new System.Windows.Forms.Label();
+            this.RoomPictureBox = new System.Windows.Forms.PictureBox();
             this.BookingPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.IndateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.OutdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.BookingButton = new System.Windows.Forms.Button();
+            this.OutdateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.IndateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.BookingPanel.SuspendLayout();
@@ -55,13 +55,15 @@
             this.RoomPanel.Size = new System.Drawing.Size(1053, 330);
             this.RoomPanel.TabIndex = 0;
             // 
-            // RoomPictureBox
+            // RoomDescriptionTB
             // 
-            this.RoomPictureBox.Location = new System.Drawing.Point(47, 31);
-            this.RoomPictureBox.Name = "RoomPictureBox";
-            this.RoomPictureBox.Size = new System.Drawing.Size(304, 222);
-            this.RoomPictureBox.TabIndex = 0;
-            this.RoomPictureBox.TabStop = false;
+            this.RoomDescriptionTB.Enabled = false;
+            this.RoomDescriptionTB.Location = new System.Drawing.Point(382, 31);
+            this.RoomDescriptionTB.Multiline = true;
+            this.RoomDescriptionTB.Name = "RoomDescriptionTB";
+            this.RoomDescriptionTB.ReadOnly = true;
+            this.RoomDescriptionTB.Size = new System.Drawing.Size(644, 124);
+            this.RoomDescriptionTB.TabIndex = 2;
             // 
             // RoomLabel
             // 
@@ -72,15 +74,14 @@
             this.RoomLabel.TabIndex = 1;
             this.RoomLabel.Text = "label1";
             // 
-            // RoomDescriptionTB
+            // RoomPictureBox
             // 
-            this.RoomDescriptionTB.Enabled = false;
-            this.RoomDescriptionTB.Location = new System.Drawing.Point(382, 31);
-            this.RoomDescriptionTB.Multiline = true;
-            this.RoomDescriptionTB.Name = "RoomDescriptionTB";
-            this.RoomDescriptionTB.ReadOnly = true;
-            this.RoomDescriptionTB.Size = new System.Drawing.Size(644, 124);
-            this.RoomDescriptionTB.TabIndex = 2;
+            this.RoomPictureBox.Location = new System.Drawing.Point(47, 31);
+            this.RoomPictureBox.Name = "RoomPictureBox";
+            this.RoomPictureBox.Size = new System.Drawing.Size(304, 222);
+            this.RoomPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RoomPictureBox.TabIndex = 0;
+            this.RoomPictureBox.TabStop = false;
             // 
             // BookingPanel
             // 
@@ -96,14 +97,28 @@
             this.BookingPanel.Size = new System.Drawing.Size(1053, 150);
             this.BookingPanel.TabIndex = 1;
             // 
-            // label1
+            // BookingButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(231, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Дата заезда:";
+            this.BookingButton.Location = new System.Drawing.Point(606, 36);
+            this.BookingButton.Name = "BookingButton";
+            this.BookingButton.Size = new System.Drawing.Size(235, 65);
+            this.BookingButton.TabIndex = 4;
+            this.BookingButton.Text = "Забронировать";
+            this.BookingButton.UseVisualStyleBackColor = true;
+            // 
+            // OutdateTimePicker
+            // 
+            this.OutdateTimePicker.Location = new System.Drawing.Point(381, 74);
+            this.OutdateTimePicker.Name = "OutdateTimePicker";
+            this.OutdateTimePicker.Size = new System.Drawing.Size(200, 28);
+            this.OutdateTimePicker.TabIndex = 3;
+            // 
+            // IndateTimePicker
+            // 
+            this.IndateTimePicker.Location = new System.Drawing.Point(381, 36);
+            this.IndateTimePicker.Name = "IndateTimePicker";
+            this.IndateTimePicker.Size = new System.Drawing.Size(200, 28);
+            this.IndateTimePicker.TabIndex = 2;
             // 
             // label2
             // 
@@ -114,28 +129,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Дата выезда:";
             // 
-            // IndateTimePicker
+            // label1
             // 
-            this.IndateTimePicker.Location = new System.Drawing.Point(381, 36);
-            this.IndateTimePicker.Name = "IndateTimePicker";
-            this.IndateTimePicker.Size = new System.Drawing.Size(200, 28);
-            this.IndateTimePicker.TabIndex = 2;
-            // 
-            // OutdateTimePicker
-            // 
-            this.OutdateTimePicker.Location = new System.Drawing.Point(381, 74);
-            this.OutdateTimePicker.Name = "OutdateTimePicker";
-            this.OutdateTimePicker.Size = new System.Drawing.Size(200, 28);
-            this.OutdateTimePicker.TabIndex = 3;
-            // 
-            // BookingButton
-            // 
-            this.BookingButton.Location = new System.Drawing.Point(606, 36);
-            this.BookingButton.Name = "BookingButton";
-            this.BookingButton.Size = new System.Drawing.Size(235, 65);
-            this.BookingButton.TabIndex = 4;
-            this.BookingButton.Text = "Забронировать";
-            this.BookingButton.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(231, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Дата заезда:";
             // 
             // RoomForm
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.BookingPanel);
             this.Controls.Add(this.RoomPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoomForm";
             this.Text = "RoomForm";
             this.RoomPanel.ResumeLayout(false);

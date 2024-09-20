@@ -21,9 +21,17 @@ namespace Bookingcom
             HotelLabel.Text = nameHotel; 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void RoomPB_Click(object sender, EventArgs e)
         {
-            RoomForm roomForm = new RoomForm();
+            PictureBox pb = (PictureBox)sender;
+            RoomForm roomForm = new RoomForm(pb.Tag.ToString());
+            roomForm.ShowDialog();
+        }
+
+        private void Roomlabel_Click(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            RoomForm roomForm = new RoomForm(lbl.Text.ToString());
             roomForm.ShowDialog();
         }
     }
