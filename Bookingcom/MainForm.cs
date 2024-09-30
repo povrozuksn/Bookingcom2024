@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace Bookingcom
 {
     public partial class MainForm : Form
     {
+        const string CONNECTION_STRING =
+            "SslMode=none; Server=localhost; Database=booking2; potr=3306; Uid=root;";
+
         public MainForm()
         {
             InitializeComponent();
