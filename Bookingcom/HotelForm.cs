@@ -17,7 +17,7 @@ namespace Bookingcom
             InitializeComponent();
 
             Text = nameHotel;
-            HotelPictureBox.Load("../../Pictures/" + nameHotel + ".jpg");
+            //HotelPictureBox.Load("../../Pictures/" + nameHotel + ".jpg");
             HotelLabel.Text = nameHotel; 
         }
 

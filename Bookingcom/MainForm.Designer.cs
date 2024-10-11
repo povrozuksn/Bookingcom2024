@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.AuthBtn = new System.Windows.Forms.Button();
             this.PasTextBox = new System.Windows.Forms.TextBox();
@@ -36,29 +35,19 @@
             this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FiltrPanel = new System.Windows.Forms.Panel();
+            this.FiltrButton = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.FindButton = new System.Windows.Forms.Button();
             this.RatingComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.FiltrButton = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.AuthPanel.SuspendLayout();
             this.FiltrPanel.SuspendLayout();
-            this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // AuthPanel
@@ -135,6 +124,48 @@
             this.FiltrPanel.Size = new System.Drawing.Size(1261, 150);
             this.FiltrPanel.TabIndex = 1;
             // 
+            // FiltrButton
+            // 
+            this.FiltrButton.Location = new System.Drawing.Point(0, 0);
+            this.FiltrButton.Name = "FiltrButton";
+            this.FiltrButton.Size = new System.Drawing.Size(120, 30);
+            this.FiltrButton.TabIndex = 9;
+            this.FiltrButton.Text = "Фильтр";
+            this.FiltrButton.UseVisualStyleBackColor = true;
+            this.FiltrButton.Click += new System.EventHandler(this.FiltrButton_Click);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(440, 110);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 28);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(302, 111);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 22);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Дата выезда";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(438, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 28);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(300, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 22);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Дата заезда";
+            // 
             // FindButton
             // 
             this.FindButton.Location = new System.Drawing.Point(1074, 74);
@@ -186,129 +217,13 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.AutoScroll = true;
             this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.label9);
-            this.MainPanel.Controls.Add(this.pictureBox3);
-            this.MainPanel.Controls.Add(this.label6);
-            this.MainPanel.Controls.Add(this.pictureBox2);
-            this.MainPanel.Controls.Add(this.label5);
-            this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 236);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1261, 417);
             this.MainPanel.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(436, 331);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 22);
-            this.label6.TabIndex = 3;
-            this.label6.Tag = "";
-            this.label6.Text = "Гостиница Волга";
-            this.label6.Click += new System.EventHandler(this.HotelLabel_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(440, 61);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(359, 256);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "Гостиница Волга";
-            this.pictureBox2.Click += new System.EventHandler(this.HotelPB_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 331);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 22);
-            this.label5.TabIndex = 1;
-            this.label5.Tag = "";
-            this.label5.Text = "Гостиница Венец";
-            this.label5.Click += new System.EventHandler(this.HotelLabel_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(58, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(359, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "Гостиница Венец";
-            this.pictureBox1.Click += new System.EventHandler(this.HotelPB_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(300, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 22);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Дата заезда";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(438, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 28);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(440, 110);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 28);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(302, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 22);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Дата выезда";
-            // 
-            // FiltrButton
-            // 
-            this.FiltrButton.Location = new System.Drawing.Point(0, 0);
-            this.FiltrButton.Name = "FiltrButton";
-            this.FiltrButton.Size = new System.Drawing.Size(120, 30);
-            this.FiltrButton.TabIndex = 9;
-            this.FiltrButton.Text = "Фильтр";
-            this.FiltrButton.UseVisualStyleBackColor = true;
-            this.FiltrButton.Click += new System.EventHandler(this.FiltrButton_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(825, 331);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 22);
-            this.label9.TabIndex = 5;
-            this.label9.Tag = "";
-            this.label9.Text = "Гостиница Мираж";
-            this.label9.Click += new System.EventHandler(this.HotelLabel_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(829, 61);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(359, 256);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "Гостиница Мираж";
-            this.pictureBox3.Click += new System.EventHandler(this.HotelPB_Click);
             // 
             // MainForm
             // 
@@ -326,11 +241,6 @@
             this.AuthPanel.PerformLayout();
             this.FiltrPanel.ResumeLayout(false);
             this.FiltrPanel.PerformLayout();
-            this.MainPanel.ResumeLayout(false);
-            this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,17 +260,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CityComboBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button FiltrButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
