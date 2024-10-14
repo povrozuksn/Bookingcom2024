@@ -12,13 +12,33 @@ namespace Bookingcom
 {
     public partial class HotelForm : Form
     {
-        public HotelForm(string nameHotel)
+        public HotelForm(string idHotel)
         {
             InitializeComponent();
 
-            Text = nameHotel;
-            //HotelPictureBox.Load("../../Pictures/" + nameHotel + ".jpg");
-            HotelLabel.Text = nameHotel; 
+            List<string> hotel = SQLClass.MySelect("SELECT id, name, rating, id_city, image, adress, tel, opis FROM hotels WHERE id = " + idHotel);
+
+            Text = hotel[1];
+            HotelPictureBox.Load("../../Pictures/" + hotel[4]);
+            HotelLabel.Text = hotel[1];
+
+            int rating = Convert.ToInt32(hotel[2]);
+            int x = 450;
+            for(int i=0; i<rating; i++)
+            {
+                PictureBox pb = new PictureBox();
+                pb.Load("../../Pictures/star.png");
+                pb.Location = new Point(x, 15);
+                pb.Size = new Size(48, 42);
+                pb.SizeMode = PictureBoxSizeMode.Zoom;
+                HotelPanel.Controls.Add(pb);
+
+                x += 55;
+            }
+
+            AdresLabel.Text = hotel[5];
+            TelLabel.Text = hotel[6];
+            HotelDescriptionTB.Text = hotel[7];
         }
 
         private void RoomPB_Click(object sender, EventArgs e)

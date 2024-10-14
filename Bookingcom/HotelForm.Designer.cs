@@ -34,7 +34,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.AdresLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.HotelDescriptionTB = new System.Windows.Forms.TextBox();
             this.HotelLabel = new System.Windows.Forms.Label();
             this.HotelPictureBox = new System.Windows.Forms.PictureBox();
@@ -44,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HotelPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HotelPictureBox)).BeginInit();
             this.RoomsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,7 +56,6 @@
             this.HotelPanel.Controls.Add(this.label4);
             this.HotelPanel.Controls.Add(this.AdresLabel);
             this.HotelPanel.Controls.Add(this.label2);
-            this.HotelPanel.Controls.Add(this.pictureBox2);
             this.HotelPanel.Controls.Add(this.HotelDescriptionTB);
             this.HotelPanel.Controls.Add(this.HotelLabel);
             this.HotelPanel.Controls.Add(this.HotelPictureBox);
@@ -71,7 +68,7 @@
             // TelLabel
             // 
             this.TelLabel.AutoSize = true;
-            this.TelLabel.Location = new System.Drawing.Point(757, 89);
+            this.TelLabel.Location = new System.Drawing.Point(496, 89);
             this.TelLabel.Name = "TelLabel";
             this.TelLabel.Size = new System.Drawing.Size(30, 22);
             this.TelLabel.TabIndex = 7;
@@ -80,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(684, 89);
+            this.label4.Location = new System.Drawing.Point(424, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 22);
             this.label4.TabIndex = 6;
@@ -89,7 +86,7 @@
             // AdresLabel
             // 
             this.AdresLabel.AutoSize = true;
-            this.AdresLabel.Location = new System.Drawing.Point(757, 57);
+            this.AdresLabel.Location = new System.Drawing.Point(496, 57);
             this.AdresLabel.Name = "AdresLabel";
             this.AdresLabel.Size = new System.Drawing.Size(30, 22);
             this.AdresLabel.TabIndex = 5;
@@ -98,21 +95,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(684, 57);
+            this.label2.Location = new System.Drawing.Point(424, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Адрес:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(428, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 42);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // HotelDescriptionTB
             // 
@@ -212,7 +199,6 @@
             this.Text = "HotelForm";
             this.HotelPanel.ResumeLayout(false);
             this.HotelPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HotelPictureBox)).EndInit();
             this.RoomsPanel.ResumeLayout(false);
             this.RoomsPanel.PerformLayout();
@@ -234,7 +220,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label AdresLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox HotelDescriptionTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;

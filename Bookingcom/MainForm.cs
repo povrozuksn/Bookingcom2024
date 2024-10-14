@@ -49,6 +49,8 @@ namespace Bookingcom
                 pb.Location = new Point(x, 50);
                 pb.Size = new Size(350, 250);
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
+                pb.Tag = hotels[i];
+                pb.Click += new EventHandler(HotelPB_Click);
                 MainPanel.Controls.Add(pb);
 
                 x += 380;
