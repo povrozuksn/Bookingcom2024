@@ -12,13 +12,15 @@ namespace Bookingcom
 {
     public partial class RoomForm : Form
     {
-        public RoomForm(string nameRoom)
+        public RoomForm(string idRoom)
         {
             InitializeComponent();
 
-            Text = nameRoom;
-            RoomPictureBox.Load("../../Pictures/" + nameRoom + ".jpg");
-            RoomLabel.Text = nameRoom;
+            List<string> room = SQLClass.MySelect("SELECT id, name, id_hotel, image  FROM rooms WHERE id = " + idRoom);
+
+            Text = room[1];
+            RoomPictureBox.Load("../../Pictures/" + room[3]);
+            RoomLabel.Text = room[1];
         }
     }
 }

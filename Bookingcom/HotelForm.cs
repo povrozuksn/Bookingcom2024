@@ -39,6 +39,36 @@ namespace Bookingcom
             AdresLabel.Text = hotel[5];
             TelLabel.Text = hotel[6];
             HotelDescriptionTB.Text = hotel[7];
+
+            List<string> rooms = SQLClass.MySelect("SELECT id, name, id_hotel, image FROM rooms WHERE id_hotel = " + idHotel);
+
+            int xRooms = 20;
+            for (int i = 0; i < rooms.Count; i += 4)
+            {
+                Label lbl = new Label();
+                lbl.Text = rooms[i + 1];
+                lbl.Location = new Point(xRooms, 280);
+                lbl.Size = new Size(250, 20);
+                lbl.Tag = rooms[i];
+                lbl.Click += new EventHandler(Roomlabel_Click);
+                RoomsPanel.Controls.Add(lbl);
+
+                PictureBox pb = new PictureBox();
+                try
+                {
+                    pb.Load("../../Pictures/" + rooms[i + 3]);
+                }
+                catch (Exception) { }
+                pb.Location = new Point(xRooms, 30);
+                pb.Size = new Size(350, 250);
+                pb.SizeMode = PictureBoxSizeMode.Zoom;
+                pb.Tag = rooms[i];
+                pb.Click += new EventHandler(RoomPB_Click);
+                RoomsPanel.Controls.Add(pb);
+
+                xRooms += 400;
+            }
+
         }
 
         private void RoomPB_Click(object sender, EventArgs e)
@@ -51,7 +81,7 @@ namespace Bookingcom
         private void Roomlabel_Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
-            RoomForm roomForm = new RoomForm(lbl.Text.ToString());
+            RoomForm roomForm = new RoomForm(lbl.Tag.ToString());
             roomForm.ShowDialog();
         }
     }
