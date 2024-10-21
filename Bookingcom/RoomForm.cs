@@ -16,11 +16,14 @@ namespace Bookingcom
         {
             InitializeComponent();
 
-            List<string> room = SQLClass.MySelect("SELECT id, name, id_hotel, image  FROM rooms WHERE id = " + idRoom);
+            List<string> room = SQLClass.MySelect("SELECT *  FROM rooms WHERE id = " + idRoom);
 
             Text = room[1];
             RoomPictureBox.Load("../../Pictures/" + room[3]);
             RoomLabel.Text = room[1];
+            RoomDescriptionTB.Text = room[6];
+            PriceLabel.Text = "Цена, руб. " + room[4];
+            SpaceLabel.Text = "Площадь, кв.м. " + room[5];
         }
     }
 }
