@@ -72,6 +72,7 @@
             this.AuthBtn.TabIndex = 4;
             this.AuthBtn.Text = "Войти";
             this.AuthBtn.UseVisualStyleBackColor = true;
+            this.AuthBtn.Click += new System.EventHandler(this.AuthBtn_Click);
             // 
             // PasTextBox
             // 

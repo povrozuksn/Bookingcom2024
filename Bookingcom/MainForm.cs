@@ -104,5 +104,10 @@ namespace Bookingcom
                 x += 380;
             }
         }
+
+        private void AuthBtn_Click(object sender, EventArgs e)
+        {
+            List<string> user = SQLClass.MySelect("SELECT login, name, surname FROM users WHERE login = '" + LoginTextBox.Text + "' AND pass = '" + PasTextBox.Text + "'"); 
+        }
     }
 }
