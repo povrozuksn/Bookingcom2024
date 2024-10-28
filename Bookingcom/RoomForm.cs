@@ -16,7 +16,7 @@ namespace Bookingcom
         {
             InitializeComponent();
 
-            List<string> room = SQLClass.MySelect("SELECT *  FROM rooms WHERE id = " + idRoom);
+            List<string> room = SQLClass.MySelect("SELECT * FROM rooms WHERE id = " + idRoom);
 
             Text = room[1];
             RoomPictureBox.Load("../../Pictures/" + room[3]);
