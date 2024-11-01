@@ -14,12 +14,18 @@ using MySql.Data.MySqlClient;
 namespace Bookingcom
 {
     public partial class MainForm : Form
-    { 
+    {
+        public static string UserName = "";
+        public static string UserSurname = "";
+        public static int isAdmin;
+
         public MainForm()
         {
             InitializeComponent();
 
             FiltrPanel.Height = FiltrButton.Height;
+            HelloLabel.Visible = false;
+            AdminButton.Visible = false;
 
             FindButton_Click(null, null);
 
@@ -107,7 +113,51 @@ namespace Bookingcom
 
         private void AuthBtn_Click(object sender, EventArgs e)
         {
-            List<string> user = SQLClass.MySelect("SELECT login, name, surname FROM users WHERE login = '" + LoginTextBox.Text + "' AND pass = '" + PasTextBox.Text + "'"); 
+            List<string> user = SQLClass.MySelect("SELECT login, name, surname, admin FROM users WHERE login = '" + LoginTextBox.Text + "' AND pass = '" + PasTextBox.Text + "'");
+            if(AuthBtn.Text == "Выйти")
+            {
+                UserName = "";
+                UserSurname = "";
+                isAdmin = 0;
+                AuthPanel.Controls.Clear();
+                AuthPanel.Controls.Add(label1);
+                AuthPanel.Controls.Add(label2);
+                LoginTextBox.Text = "";
+                AuthPanel.Controls.Add(LoginTextBox);
+                PasTextBox.Text = "";
+                AuthPanel.Controls.Add(PasTextBox);
+                AuthBtn.Text = "Войти";
+                AuthPanel.Controls.Add(AuthBtn);
+                HelloLabel.Text = "";
+                HelloLabel.Visible = false;
+                AdminButton.Visible = false;
+                AuthPanel.Controls.Add(AdminButton);
+
+            }
+            else
+            {
+                if (user.Count > 0)
+                {
+                    UserName = user[1];
+                    UserSurname = user[2];
+                    isAdmin = Convert.ToInt32(user[3]);
+                    AuthPanel.Controls.Clear();
+                    AuthPanel.Controls.Add(HelloLabel);
+                    HelloLabel.Visible = true;
+                    HelloLabel.Text = "Приветствуем Вас, " + UserName + " " + UserSurname;
+                    AuthPanel.Controls.Add(AuthBtn);
+                    AuthBtn.Text = "Выйти";
+                    AdminButton.Visible = Convert.ToBoolean(isAdmin);
+                    AuthPanel.Controls.Add(AdminButton);
+                }
+                else
+                {
+                    LoginTextBox.Text = "";
+                    PasTextBox.Text = "";
+                    MessageBox.Show("Вы указали неверный логин/пароль или незарегистрированы. Хотите зарегистрироваться?", "Ошибка авторизации", MessageBoxButtons.YesNo);
+                }
+            }
+            
         }
     }
 }

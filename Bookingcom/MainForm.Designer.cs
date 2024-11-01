@@ -46,6 +46,8 @@
             this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.HelloLabel = new System.Windows.Forms.Label();
+            this.AdminButton = new System.Windows.Forms.Button();
             this.AuthPanel.SuspendLayout();
             this.FiltrPanel.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +55,8 @@
             // AuthPanel
             // 
             this.AuthPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AuthPanel.Controls.Add(this.AdminButton);
+            this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AuthBtn);
             this.AuthPanel.Controls.Add(this.PasTextBox);
             this.AuthPanel.Controls.Add(this.label2);
@@ -228,6 +232,24 @@
             this.MainPanel.Size = new System.Drawing.Size(1261, 417);
             this.MainPanel.TabIndex = 2;
             // 
+            // HelloLabel
+            // 
+            this.HelloLabel.AutoSize = true;
+            this.HelloLabel.Location = new System.Drawing.Point(15, 30);
+            this.HelloLabel.Name = "HelloLabel";
+            this.HelloLabel.Size = new System.Drawing.Size(58, 22);
+            this.HelloLabel.TabIndex = 5;
+            this.HelloLabel.Text = "label5";
+            // 
+            // AdminButton
+            // 
+            this.AdminButton.Location = new System.Drawing.Point(770, 26);
+            this.AdminButton.Name = "AdminButton";
+            this.AdminButton.Size = new System.Drawing.Size(231, 31);
+            this.AdminButton.TabIndex = 6;
+            this.AdminButton.Text = "Панель администратора";
+            this.AdminButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -268,6 +290,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label HelloLabel;
+        private System.Windows.Forms.Button AdminButton;
     }
 }
 
