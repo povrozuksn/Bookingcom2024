@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.AuthPanel = new System.Windows.Forms.Panel();
+            this.AdminButton = new System.Windows.Forms.Button();
+            this.HelloLabel = new System.Windows.Forms.Label();
             this.AuthBtn = new System.Windows.Forms.Button();
             this.PasTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.HelloLabel = new System.Windows.Forms.Label();
-            this.AdminButton = new System.Windows.Forms.Button();
             this.AuthPanel.SuspendLayout();
             this.FiltrPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,25 @@
             this.AuthPanel.Size = new System.Drawing.Size(1261, 86);
             this.AuthPanel.TabIndex = 0;
             // 
+            // AdminButton
+            // 
+            this.AdminButton.Location = new System.Drawing.Point(770, 26);
+            this.AdminButton.Name = "AdminButton";
+            this.AdminButton.Size = new System.Drawing.Size(231, 31);
+            this.AdminButton.TabIndex = 6;
+            this.AdminButton.Text = "Панель администратора";
+            this.AdminButton.UseVisualStyleBackColor = true;
+            this.AdminButton.Click += new System.EventHandler(this.AdminButton_Click);
+            // 
+            // HelloLabel
+            // 
+            this.HelloLabel.AutoSize = true;
+            this.HelloLabel.Location = new System.Drawing.Point(15, 30);
+            this.HelloLabel.Name = "HelloLabel";
+            this.HelloLabel.Size = new System.Drawing.Size(58, 22);
+            this.HelloLabel.TabIndex = 5;
+            this.HelloLabel.Text = "label5";
+            // 
             // AuthBtn
             // 
             this.AuthBtn.Location = new System.Drawing.Point(599, 26);
@@ -82,6 +101,7 @@
             // 
             this.PasTextBox.Location = new System.Drawing.Point(383, 26);
             this.PasTextBox.Name = "PasTextBox";
+            this.PasTextBox.PasswordChar = '*';
             this.PasTextBox.Size = new System.Drawing.Size(198, 28);
             this.PasTextBox.TabIndex = 3;
             // 
@@ -232,24 +252,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1261, 417);
             this.MainPanel.TabIndex = 2;
             // 
-            // HelloLabel
-            // 
-            this.HelloLabel.AutoSize = true;
-            this.HelloLabel.Location = new System.Drawing.Point(15, 30);
-            this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(58, 22);
-            this.HelloLabel.TabIndex = 5;
-            this.HelloLabel.Text = "label5";
-            // 
-            // AdminButton
-            // 
-            this.AdminButton.Location = new System.Drawing.Point(770, 26);
-            this.AdminButton.Name = "AdminButton";
-            this.AdminButton.Size = new System.Drawing.Size(231, 31);
-            this.AdminButton.TabIndex = 6;
-            this.AdminButton.Text = "Панель администратора";
-            this.AdminButton.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -261,6 +263,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bookigcom";
             this.AuthPanel.ResumeLayout(false);
             this.AuthPanel.PerformLayout();

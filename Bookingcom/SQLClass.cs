@@ -36,6 +36,14 @@ namespace Bookingcom
             return list;
         }
 
-
+        /// <summary>
+        /// Функция INSERT-запроса
+        /// </summary>
+        public static void MyUpDate(string cmdText)
+        {
+            MySqlCommand cmd = new MySqlCommand(cmdText, conn);
+            DbDataReader reader = cmd.ExecuteReader();
+            reader.Close();
+        }
     }
 }

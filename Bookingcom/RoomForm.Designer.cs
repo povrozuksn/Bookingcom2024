@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.RoomPanel = new System.Windows.Forms.Panel();
+            this.SpaceLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
             this.RoomDescriptionTB = new System.Windows.Forms.TextBox();
             this.RoomLabel = new System.Windows.Forms.Label();
             this.RoomPictureBox = new System.Windows.Forms.PictureBox();
@@ -38,8 +40,6 @@
             this.IndateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PriceLabel = new System.Windows.Forms.Label();
-            this.SpaceLabel = new System.Windows.Forms.Label();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.BookingPanel.SuspendLayout();
@@ -58,6 +58,24 @@
             this.RoomPanel.Name = "RoomPanel";
             this.RoomPanel.Size = new System.Drawing.Size(1053, 330);
             this.RoomPanel.TabIndex = 0;
+            // 
+            // SpaceLabel
+            // 
+            this.SpaceLabel.AutoSize = true;
+            this.SpaceLabel.Location = new System.Drawing.Point(691, 173);
+            this.SpaceLabel.Name = "SpaceLabel";
+            this.SpaceLabel.Size = new System.Drawing.Size(58, 22);
+            this.SpaceLabel.TabIndex = 4;
+            this.SpaceLabel.Text = "label3";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(410, 173);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(58, 22);
+            this.PriceLabel.TabIndex = 3;
+            this.PriceLabel.Text = "label3";
             // 
             // RoomDescriptionTB
             // 
@@ -142,24 +160,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Дата заезда:";
             // 
-            // PriceLabel
-            // 
-            this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(410, 173);
-            this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(58, 22);
-            this.PriceLabel.TabIndex = 3;
-            this.PriceLabel.Text = "label3";
-            // 
-            // SpaceLabel
-            // 
-            this.SpaceLabel.AutoSize = true;
-            this.SpaceLabel.Location = new System.Drawing.Point(691, 173);
-            this.SpaceLabel.Name = "SpaceLabel";
-            this.SpaceLabel.Size = new System.Drawing.Size(58, 22);
-            this.SpaceLabel.TabIndex = 4;
-            this.SpaceLabel.Text = "label3";
-            // 
             // RoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -170,6 +170,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RoomForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RoomForm";
             this.RoomPanel.ResumeLayout(false);
             this.RoomPanel.PerformLayout();

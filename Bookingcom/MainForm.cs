@@ -159,5 +159,11 @@ namespace Bookingcom
             }
             
         }
+
+        private void AdminButton_Click(object sender, EventArgs e)
+        {
+            AdminForm adminForm = new AdminForm();
+            adminForm.ShowDialog();
+        }
     }
 }
