@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.AddCityTextBox = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.AddCityButton = new System.Windows.Forms.Button();
+            this.AddCityTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +49,15 @@
             this.panel1.Size = new System.Drawing.Size(343, 445);
             this.panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Таблица \"Города\"";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -61,31 +70,6 @@
             this.panel2.Size = new System.Drawing.Size(340, 445);
             this.panel2.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Таблица \"Города\"";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Добавить Город";
-            // 
-            // AddCityTextBox
-            // 
-            this.AddCityTextBox.Location = new System.Drawing.Point(16, 49);
-            this.AddCityTextBox.Name = "AddCityTextBox";
-            this.AddCityTextBox.Size = new System.Drawing.Size(304, 27);
-            this.AddCityTextBox.TabIndex = 1;
-            // 
             // AddCityButton
             // 
             this.AddCityButton.Location = new System.Drawing.Point(190, 82);
@@ -96,6 +80,22 @@
             this.AddCityButton.UseVisualStyleBackColor = true;
             this.AddCityButton.Click += new System.EventHandler(this.AddCityButton_Click);
             // 
+            // AddCityTextBox
+            // 
+            this.AddCityTextBox.Location = new System.Drawing.Point(16, 49);
+            this.AddCityTextBox.Name = "AddCityTextBox";
+            this.AddCityTextBox.Size = new System.Drawing.Size(304, 27);
+            this.AddCityTextBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Добавить Город";
+            // 
             // AdminCitiesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -104,10 +104,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminCitiesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AdminCitiesForm";
+            this.Load += new System.EventHandler(this.AdminCitiesForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
