@@ -22,5 +22,12 @@ namespace Bookingcom
             AdminCitiesForm adminCitiesForm = new AdminCitiesForm();
             adminCitiesForm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminHotelsForm adminHolesForm = new AdminHotelsForm();
+            adminHolesForm.ShowDialog();
+
+        }
     }
 }
