@@ -12,9 +12,21 @@ namespace Bookingcom
 {
     public partial class HotelForm : Form
     {
-        public HotelForm(string idHotel)
+        string idHotel;
+        public HotelForm(string _idHotel)
         {
             InitializeComponent();
+
+            idHotel = _idHotel;
+
+            SaveButton.Visible = Convert.ToBoolean(MainForm.isAdmin);
+
+            HotelDescriptionTB.ReadOnly = !Convert.ToBoolean(MainForm.isAdmin);
+            HotelDescriptionTB.Enabled = Convert.ToBoolean(MainForm.isAdmin);
+
+            AdresTextBox.Visible = Convert.ToBoolean(MainForm.isAdmin);
+            TelTextBox.Visible = Convert.ToBoolean(MainForm.isAdmin);
+
 
             List<string> hotel = SQLClass.MySelect("SELECT id, name, rating, id_city, image, adress, tel, opis FROM hotels WHERE id = " + idHotel);
 
@@ -83,6 +95,12 @@ namespace Bookingcom
             Label lbl = (Label)sender;
             RoomForm roomForm = new RoomForm(lbl.Tag.ToString());
             roomForm.ShowDialog();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SQLClass.MyUpDate("UPDATE hotels SET opis = '" + HotelDescriptionTB.Text + "', tel = '" + TelTextBox.Text +"', adress = '" + AdresTextBox.Text + "' WHERE id = " + idHotel);
+            MessageBox.Show("Сохранено");
         }
     }
 }

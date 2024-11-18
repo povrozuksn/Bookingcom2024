@@ -37,6 +37,9 @@
             this.HotelLabel = new System.Windows.Forms.Label();
             this.HotelPictureBox = new System.Windows.Forms.PictureBox();
             this.RoomsPanel = new System.Windows.Forms.Panel();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.AdresTextBox = new System.Windows.Forms.TextBox();
+            this.TelTextBox = new System.Windows.Forms.TextBox();
             this.HotelPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HotelPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +47,9 @@
             // HotelPanel
             // 
             this.HotelPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.HotelPanel.Controls.Add(this.TelTextBox);
+            this.HotelPanel.Controls.Add(this.AdresTextBox);
+            this.HotelPanel.Controls.Add(this.SaveButton);
             this.HotelPanel.Controls.Add(this.TelLabel);
             this.HotelPanel.Controls.Add(this.label4);
             this.HotelPanel.Controls.Add(this.AdresLabel);
@@ -130,6 +136,34 @@
             this.RoomsPanel.Size = new System.Drawing.Size(1094, 335);
             this.RoomsPanel.TabIndex = 1;
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(917, 275);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(136, 36);
+            this.SaveButton.TabIndex = 8;
+            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // AdresTextBox
+            // 
+            this.AdresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AdresTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AdresTextBox.Location = new System.Drawing.Point(500, 57);
+            this.AdresTextBox.Name = "AdresTextBox";
+            this.AdresTextBox.Size = new System.Drawing.Size(553, 25);
+            this.AdresTextBox.TabIndex = 9;
+            // 
+            // TelTextBox
+            // 
+            this.TelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TelTextBox.Location = new System.Drawing.Point(500, 86);
+            this.TelTextBox.Name = "TelTextBox";
+            this.TelTextBox.Size = new System.Drawing.Size(553, 25);
+            this.TelTextBox.TabIndex = 10;
+            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -160,5 +194,8 @@
         private System.Windows.Forms.Label AdresLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox HotelDescriptionTB;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox TelTextBox;
+        private System.Windows.Forms.TextBox AdresTextBox;
     }
 }
