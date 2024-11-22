@@ -6,55 +6,54 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookingcom
 {
-    public partial class AdminHotelsForm : Form
+    public partial class AdminRoomsForm : Form
     {
-        public AdminHotelsForm()
+        public AdminRoomsForm()
         {
             InitializeComponent();
         }
 
-        private void AdminHotelsForm_Load(object sender, EventArgs e)
+        private void AdminRoomsForm_Load(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label3);
 
-            List<string> cities = SQLClass.MySelect("SELECT id, Name FROM cities");
+            List<string> hotels = SQLClass.MySelect("SELECT id, Name FROM hotels");
 
-            CityComboBox.Items.Clear();
-            for (int i = 0; i < cities.Count; i += 2)
+            HotelsComboBox.Items.Clear();
+            for (int i = 0; i < hotels.Count; i += 2)
             {
-                CityComboBox.Items.Add(cities[i] + ". " + cities[i + 1]);
+                HotelsComboBox.Items.Add(hotels[i] + ". " + hotels[i + 1]);
             }
 
-            List<string> hotels = SQLClass.MySelect("SELECT id, name, id_city FROM hotels");
+            List<string> rooms = SQLClass.MySelect("SELECT id, name, id_hotel FROM rooms");
 
             int y = 50;
-            for(int i=0; i<hotels.Count; i+=3)
+            for (int i = 0; i < rooms.Count; i += 3)
             {
                 Label lbl1 = new Label();
-                lbl1.Text = hotels[i];
+                lbl1.Text = rooms[i];
                 lbl1.Location = new Point(20, y);
                 lbl1.Size = new Size(50, 30);
-                lbl1.Tag = hotels[i];
+                lbl1.Tag = rooms[i];
                 panel1.Controls.Add(lbl1);
 
                 Label lbl2 = new Label();
-                lbl2.Text = hotels[i+1];
+                lbl2.Text = rooms[i + 1];
                 lbl2.Location = new Point(100, y);
                 lbl2.Size = new Size(200, 30);
                 panel1.Controls.Add(lbl2);
 
-                List<string> city = SQLClass.MySelect("SELECT Name FROM cities WHERE id = '" + hotels[i + 2] + "'");
+                List<string> hotel = SQLClass.MySelect("SELECT Name FROM hotels WHERE id = '" + rooms[i + 2] + "'");
 
                 Label lbl3 = new Label();
-                lbl3.Text = city[0];
+                lbl3.Text = hotel[0];
                 lbl3.Location = new Point(350, y);
                 lbl3.Size = new Size(200, 30);
                 panel1.Controls.Add(lbl3);
@@ -63,7 +62,7 @@ namespace Bookingcom
                 btn.Location = new Point(550, y);
                 btn.Size = new Size(100, 30);
                 btn.Text = "Удалить";
-                btn.Click += new EventHandler(DelHotelClick);
+                btn.Click += new EventHandler(DelRoomClick);
                 panel1.Controls.Add(btn);
 
                 y += 40;
@@ -71,27 +70,26 @@ namespace Bookingcom
         }
 
         string adress;
-        private void AddPicHotelBtn_Click(object sender, EventArgs e)
+        private void AddPicRoomBtn_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 adress = openFileDialog1.FileName;
-                PicHotelPictureBox1.Load(adress);
+                PicRoomPictureBox.Load(adress);
                 adress = Path.GetFileName(adress);
             }
         }
 
-        private void AddHotelBtn_Click(object sender, EventArgs e)
+        private void AddRoomBtn_Click(object sender, EventArgs e)
         {
-            if(NameHotelTextBox.Text != "" && CityComboBox.Text != "")
+            if(NameRoomTextBox.Text != "" && HotelsComboBox.Text != "")
             {
-                SQLClass.MyUpDate("INSERT INTO hotels (name, rating, id_city, image) VALUES ('" + NameHotelTextBox.Text + "','" + RatingComboBox.Text + "','" + CityComboBox.Text + "','" + adress + "' )");
+                SQLClass.MyUpDate("INSERT INTO rooms (name, id_hotel, image) VALUES ('" + NameRoomTextBox.Text + "','" + HotelsComboBox.Text + "','" + adress + "' )");
                 MessageBox.Show("Сохранено");
-                NameHotelTextBox.Text = "";
-                RatingComboBox.Text = "";
-                CityComboBox.Text = "";
-                PicHotelPictureBox1.Image = null;
-                AdminHotelsForm_Load(sender, e);
+                NameRoomTextBox.Text = "";
+                HotelsComboBox.Text = "";
+                PicRoomPictureBox.Image = null;
+                AdminRoomsForm_Load(sender, e);
             }
             else
             {
@@ -99,7 +97,7 @@ namespace Bookingcom
             }
         }
 
-        private void DelHotelClick(object sender, EventArgs e)
+        private void DelRoomClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             int y = btn.Location.Y;
@@ -107,11 +105,11 @@ namespace Bookingcom
             {
                 if (control.Location == new Point(20, y))
                 {
-                    SQLClass.MyUpDate("DELETE FROM hotels WHERE id = '" + control.Tag + "'");
+                    SQLClass.MyUpDate("DELETE FROM rooms WHERE id = '" + control.Tag + "'");
                     MessageBox.Show("Успешно удалено");
                 }
             }
-            AdminHotelsForm_Load(sender, e);
+            AdminRoomsForm_Load(sender, e);
         }
 
     }

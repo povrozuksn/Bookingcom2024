@@ -50,6 +50,8 @@ namespace Bookingcom
 
             AdresLabel.Text = hotel[5];
             TelLabel.Text = hotel[6];
+            AdresTextBox.Text = hotel[5];
+            TelTextBox.Text = hotel[6];
             HotelDescriptionTB.Text = hotel[7];
 
             List<string> rooms = SQLClass.MySelect("SELECT id, name, id_hotel, image FROM rooms WHERE id_hotel = " + idHotel);
