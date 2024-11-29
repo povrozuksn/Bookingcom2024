@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,27 +64,6 @@
             this.panel1.Size = new System.Drawing.Size(891, 347);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.AddPicRoomBtn);
-            this.panel2.Controls.Add(this.PicRoomPictureBox);
-            this.panel2.Controls.Add(this.AddRoomBtn);
-            this.panel2.Controls.Add(this.HotelsComboBox);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.NameRoomTextBox);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 347);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(891, 265);
-            this.panel2.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -111,6 +90,27 @@
             this.label1.Size = new System.Drawing.Size(22, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "id";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.AddPicRoomBtn);
+            this.panel2.Controls.Add(this.PicRoomPictureBox);
+            this.panel2.Controls.Add(this.AddRoomBtn);
+            this.panel2.Controls.Add(this.HotelsComboBox);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.NameRoomTextBox);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 347);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(891, 265);
+            this.panel2.TabIndex = 1;
             // 
             // label11
             // 
@@ -235,7 +235,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminRoomsForm";
             this.Text = "AdminRoomsForm";
             this.Load += new System.EventHandler(this.AdminRoomsForm_Load);

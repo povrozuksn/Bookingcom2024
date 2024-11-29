@@ -26,6 +26,7 @@ namespace Bookingcom
             FiltrPanel.Height = FiltrButton.Height;
             HelloLabel.Visible = false;
             AdminButton.Visible = false;
+            RegButton.Visible = true;
 
             FindButton_Click(null, null);
 
@@ -132,6 +133,8 @@ namespace Bookingcom
                 HelloLabel.Visible = false;
                 AdminButton.Visible = false;
                 AuthPanel.Controls.Add(AdminButton);
+                RegButton.Visible = true;
+                AuthPanel.Controls.Add(RegButton);
 
             }
             else
@@ -149,12 +152,19 @@ namespace Bookingcom
                     AuthBtn.Text = "Выйти";
                     AdminButton.Visible = Convert.ToBoolean(isAdmin);
                     AuthPanel.Controls.Add(AdminButton);
+                    RegButton.Visible = false;
+                    AuthPanel.Controls.Add(RegButton);
                 }
                 else
                 {
                     LoginTextBox.Text = "";
                     PasTextBox.Text = "";
-                    MessageBox.Show("Вы указали неверный логин/пароль или незарегистрированы. Хотите зарегистрироваться?", "Ошибка авторизации", MessageBoxButtons.YesNo);
+                    var result = MessageBox.Show("Вы указали неверный логин/пароль или незарегистрированы. Хотите зарегистрироваться?", "Ошибка авторизации", MessageBoxButtons.YesNo);
+                    if(result == DialogResult.Yes)
+                    {
+                        RegForm regForm = new RegForm();
+                        regForm.ShowDialog();
+                    }
                 }
             }
             
@@ -164,6 +174,12 @@ namespace Bookingcom
         {
             AdminForm adminForm = new AdminForm();
             adminForm.ShowDialog();
+        }
+
+        private void RegButton_Click(object sender, EventArgs e)
+        {
+            RegForm regForm = new RegForm();
+            regForm.ShowDialog();
         }
     }
 }

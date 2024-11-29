@@ -48,6 +48,7 @@
             this.CityComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.RegButton = new System.Windows.Forms.Button();
             this.AuthPanel.SuspendLayout();
             this.FiltrPanel.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // AuthPanel
             // 
             this.AuthPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AuthPanel.Controls.Add(this.RegButton);
             this.AuthPanel.Controls.Add(this.AdminButton);
             this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AuthBtn);
@@ -252,6 +254,16 @@
             this.MainPanel.Size = new System.Drawing.Size(1261, 417);
             this.MainPanel.TabIndex = 2;
             // 
+            // RegButton
+            // 
+            this.RegButton.Location = new System.Drawing.Point(1017, 28);
+            this.RegButton.Name = "RegButton";
+            this.RegButton.Size = new System.Drawing.Size(202, 29);
+            this.RegButton.TabIndex = 7;
+            this.RegButton.Text = "Зарегистрироваться";
+            this.RegButton.UseVisualStyleBackColor = true;
+            this.RegButton.Click += new System.EventHandler(this.RegButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -295,6 +307,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label HelloLabel;
         private System.Windows.Forms.Button AdminButton;
+        private System.Windows.Forms.Button RegButton;
     }
 }
 
