@@ -15,6 +15,7 @@ namespace Bookingcom
         public AdminRoomsForm()
         {
             InitializeComponent();
+            Text = "Форма управления таблицей \"Номера\"";
         }
 
         private void AdminRoomsForm_Load(object sender, EventArgs e)
@@ -47,19 +48,19 @@ namespace Bookingcom
                 Label lbl2 = new Label();
                 lbl2.Text = rooms[i + 1];
                 lbl2.Location = new Point(100, y);
-                lbl2.Size = new Size(200, 30);
+                lbl2.Size = new Size(300, 30);
                 panel1.Controls.Add(lbl2);
 
                 List<string> hotel = SQLClass.MySelect("SELECT Name FROM hotels WHERE id = '" + rooms[i + 2] + "'");
 
                 Label lbl3 = new Label();
                 lbl3.Text = hotel[0];
-                lbl3.Location = new Point(350, y);
-                lbl3.Size = new Size(200, 30);
+                lbl3.Location = new Point(450, y);
+                lbl3.Size = new Size(250, 30);
                 panel1.Controls.Add(lbl3);
 
                 Button btn = new Button();
-                btn.Location = new Point(550, y);
+                btn.Location = new Point(750, y);
                 btn.Size = new Size(100, 30);
                 btn.Text = "Удалить";
                 btn.Click += new EventHandler(DelRoomClick);

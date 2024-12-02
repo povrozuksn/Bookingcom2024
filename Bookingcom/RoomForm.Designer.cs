@@ -40,6 +40,9 @@
             this.IndateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.SpaceTextBox = new System.Windows.Forms.TextBox();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.RoomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoomPictureBox)).BeginInit();
             this.BookingPanel.SuspendLayout();
@@ -48,6 +51,9 @@
             // RoomPanel
             // 
             this.RoomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.RoomPanel.Controls.Add(this.SaveButton);
+            this.RoomPanel.Controls.Add(this.SpaceTextBox);
+            this.RoomPanel.Controls.Add(this.PriceTextBox);
             this.RoomPanel.Controls.Add(this.SpaceLabel);
             this.RoomPanel.Controls.Add(this.PriceLabel);
             this.RoomPanel.Controls.Add(this.RoomDescriptionTB);
@@ -160,6 +166,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Дата заезда:";
             // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Location = new System.Drawing.Point(485, 170);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(85, 28);
+            this.PriceTextBox.TabIndex = 5;
+            // 
+            // SpaceTextBox
+            // 
+            this.SpaceTextBox.Location = new System.Drawing.Point(800, 170);
+            this.SpaceTextBox.Name = "SpaceTextBox";
+            this.SpaceTextBox.Size = new System.Drawing.Size(84, 28);
+            this.SpaceTextBox.TabIndex = 6;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(904, 282);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(134, 34);
+            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // RoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -195,5 +225,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label SpaceLabel;
         private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox SpaceTextBox;
+        private System.Windows.Forms.TextBox PriceTextBox;
     }
 }

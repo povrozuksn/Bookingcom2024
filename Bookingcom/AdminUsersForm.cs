@@ -15,12 +15,17 @@ namespace Bookingcom
         public AdminUsersForm()
         {
             InitializeComponent();
+            Text = "Форма управления таблицей \"Пользователи\"";
         }
 
         private void AdminUsersForm_Load(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            //panel1.Controls.Add(label1);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label5);
 
             List<string> users = SQLClass.MySelect("SELECT id, login, pass, name, surname FROM users ORDER BY id");
 
@@ -59,7 +64,7 @@ namespace Bookingcom
                 panel1.Controls.Add(lbl4);
 
                 Button button = new Button();
-                button.Location = new Point(600, y);
+                button.Location = new Point(700, y);
                 button.Size = new Size(80, 30);
                 button.Text = "Удалить";
                 button.Click += new EventHandler(DelUserClick);

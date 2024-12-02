@@ -16,6 +16,7 @@ namespace Bookingcom
         public AdminHotelsForm()
         {
             InitializeComponent();
+            Text = "Форма управления таблицей \"Гостиницы\"";
         }
 
         private void AdminHotelsForm_Load(object sender, EventArgs e)

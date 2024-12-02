@@ -62,7 +62,7 @@ namespace Bookingcom
                 Label lbl = new Label();
                 lbl.Text = rooms[i + 1];
                 lbl.Location = new Point(xRooms, 280);
-                lbl.Size = new Size(250, 20);
+                lbl.Size = new Size(350, 20);
                 lbl.Tag = rooms[i];
                 lbl.Click += new EventHandler(Roomlabel_Click);
                 RoomsPanel.Controls.Add(lbl);
