@@ -44,5 +44,16 @@ namespace Bookingcom
             SQLClass.MyUpDate("UPDATE rooms SET opis = '" + RoomDescriptionTB.Text + "', price = '" + PriceTextBox.Text + "', space = '" + SpaceTextBox.Text + "' WHERE id = " + idRoom);
             MessageBox.Show("Сохранено");
         }
+
+        private void BookingButton_Click(object sender, EventArgs e)
+        {
+            if(MainForm.Login == "")
+            {
+                MessageBox.Show("Вы не авторизованы");
+                return;
+            }
+            SQLClass.MyUpDate("INSERT INTO booking (user, dateFrom, dateTo, room_id) VALUES ('" + MainForm.Login + "', '" + IndateTimePicker.Value.ToString("yyyy-MM-dd") + "', '" + OutdateTimePicker.Value.ToString("yyyy-MM-dd") + "', '" + idRoom + "')");
+            MessageBox.Show("Бронирование прошло успешно");
+        }
     }
 }

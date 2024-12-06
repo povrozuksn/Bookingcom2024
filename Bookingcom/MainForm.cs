@@ -16,6 +16,7 @@ namespace Bookingcom
     public partial class MainForm : Form
     {
         public static string UserName = "";
+        public static string Login = "";
         public static string UserSurname = "";
         public static int isAdmin;
 
@@ -119,6 +120,7 @@ namespace Bookingcom
             {
                 UserName = "";
                 UserSurname = "";
+                Login = "";
                 isAdmin = 0;
                 AuthPanel.Controls.Clear();
                 AuthPanel.Controls.Add(label1);
@@ -141,6 +143,7 @@ namespace Bookingcom
             {
                 if (user.Count > 0)
                 {
+                    Login = user[0];
                     UserName = user[1];
                     UserSurname = user[2];
                     isAdmin = Convert.ToInt32(user[3]);

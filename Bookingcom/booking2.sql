@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 06 2024 г., 18:52
+-- Время создания: Дек 06 2024 г., 19:56
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- База данных: `booking2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `booking`
+--
+
+CREATE TABLE IF NOT EXISTS `booking` (
+  `user` varchar(20) NOT NULL,
+  `dateFrom` date NOT NULL,
+  `dateTo` date NOT NULL,
+  `room_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `booking`
+--
+
+INSERT INTO `booking` (`user`, `dateFrom`, `dateTo`, `room_id`) VALUES
+('ivan', '2024-12-06', '2024-12-10', 3),
+('egor', '2024-12-09', '2024-12-15', 1),
+('ivan', '2024-12-09', '2024-12-15', 5);
 
 -- --------------------------------------------------------
 
