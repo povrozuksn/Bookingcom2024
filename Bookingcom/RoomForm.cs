@@ -13,6 +13,7 @@ namespace Bookingcom
     public partial class RoomForm : Form
     {
         string idRoom;
+        int count_rooms;
         public RoomForm(string _idRoom)
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace Bookingcom
             SpaceLabel.Text = "Площадь, кв.м. " + room[5];
             PriceTextBox.Text = room[4];
             SpaceTextBox.Text = room[5];
+            count_rooms = Convert.ToInt32(room[7]);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -52,18 +54,19 @@ namespace Bookingcom
                 MessageBox.Show("Вы не авторизованы");
                 return;
             }
-            DateTime dt = IndateTimePicker.Value;
 
+            DateTime dt = IndateTimePicker.Value;
             while(dt <= OutdateTimePicker.Value.AddDays(0.5))
             {
                 List<string> exitBooking = SQLClass.MySelect("SELECT COUNT(*) FROM booking WHERE dateFrom <= '" + dt.ToString("yyyy-MM-dd") + "' AND dateTo >= '" + dt.ToString("yyyy-MM-dd") + "' AND room_id = " + idRoom);
-                if (Convert.ToInt32(exitBooking[0]) > 0)
+                if (Convert.ToInt32(exitBooking[0]) >= count_rooms)
                 {
                     MessageBox.Show("На эти даты номер забронирован. Выберите другую дату.");
                     return;
                 }
                 dt = dt.AddDays(1);
             }
+
             SQLClass.MyUpDate("INSERT INTO booking (user, dateFrom, dateTo, room_id) VALUES ('" + MainForm.Login + "', '" + IndateTimePicker.Value.ToString("yyyy-MM-dd") + "', '" + OutdateTimePicker.Value.ToString("yyyy-MM-dd") + "', '" + idRoom + "')");
             MessageBox.Show("Бронирование прошло успешно");
         }

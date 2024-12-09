@@ -54,10 +54,10 @@ namespace Bookingcom
             TelTextBox.Text = hotel[6];
             HotelDescriptionTB.Text = hotel[7];
 
-            List<string> rooms = SQLClass.MySelect("SELECT id, name, id_hotel, image FROM rooms WHERE id_hotel = " + idHotel);
+            List<string> rooms = SQLClass.MySelect("SELECT id, name, id_hotel, image, kol FROM rooms WHERE id_hotel = " + idHotel);
 
             int xRooms = 20;
-            for (int i = 0; i < rooms.Count; i += 4)
+            for (int i = 0; i < rooms.Count; i += 5)
             {
                 Label lbl = new Label();
                 lbl.Text = rooms[i + 1];
@@ -66,6 +66,12 @@ namespace Bookingcom
                 lbl.Tag = rooms[i];
                 lbl.Click += new EventHandler(Roomlabel_Click);
                 RoomsPanel.Controls.Add(lbl);
+
+                Label lbl1 = new Label();
+                lbl1.Text = "Количество номеров: " + rooms[i + 4];
+                lbl1.Location = new Point(xRooms, 300);
+                lbl1.Size = new Size(350, 20);
+                RoomsPanel.Controls.Add(lbl1);
 
                 PictureBox pb = new PictureBox();
                 try
