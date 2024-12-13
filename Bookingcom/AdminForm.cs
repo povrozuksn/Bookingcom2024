@@ -42,5 +42,11 @@ namespace Bookingcom
             AdminUsersForm adminUsersForm = new AdminUsersForm();  
             adminUsersForm.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AdminBookingForm adminBookingForm = new AdminBookingForm();
+            adminBookingForm.ShowDialog();
+        }
     }
 }
