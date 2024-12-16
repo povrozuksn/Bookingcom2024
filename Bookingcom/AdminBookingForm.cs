@@ -27,9 +27,8 @@ namespace Bookingcom
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label5);
 
-            List<string> bookinglist = SQLClass.MySelect("SELECT booking.room_id, users.surname, booking.dateFrom, booking.dateTo, rooms.name, hotels.name "+
+            List<string> bookinglist = SQLClass.MySelect("SELECT booking.room_id, booking.user, booking.dateFrom, booking.dateTo, rooms.name, hotels.name "+
                                                             "FROM booking " +
-                                                            "JOIN users ON users.login = booking.user " +
                                                             "JOIN rooms ON rooms.id = booking.room_id " + 
                                                             "JOIN hotels ON hotels.id = rooms.id_hotel " + 
                                                             "ORDER BY booking.dateFrom");
@@ -43,6 +42,8 @@ namespace Bookingcom
                 lbl0.Location = new Point(10, y);
                 lbl0.Size = new Size(130, 30);
                 lbl0.Tag = bookinglist[i];
+                lbl0.AccessibleDescription = bookinglist[i+2];      //дата заезда
+                lbl0.AccessibleName = bookinglist[i+3];             //дата выезда
                 panel1.Controls.Add(lbl0);
 
                 //Дата заезда
@@ -78,14 +79,14 @@ namespace Bookingcom
                 button.Location = new Point(950, y);
                 button.Size = new Size(80, 30);
                 button.Text = "Удалить";
-                //button.Click += new EventHandler(DelBookingClick);
+                button.Click += new EventHandler(DelBookingClick);
                 panel1.Controls.Add(button);
 
                 y += 30;
             }
         }
 
-        /*
+        
         private void DelBookingClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -94,11 +95,15 @@ namespace Bookingcom
             {
                 if (control.Location == new Point(10, y))
                 {
-                    SQLClass.MyUpDate("DELETE FROM users WHERE id = '" + control.Tag + "'");
+                    SQLClass.MyUpDate("DELETE FROM booking" +
+                                        " WHERE user = '" + control.Text + "'" +
+                                        " AND room_id = '" + control.Tag + "'" +
+                                        " AND dateFrom = '" + Convert.ToDateTime(control.AccessibleDescription).ToString("yyyy-MM-dd") + "'" +
+                                        " AND dateTo = '" + Convert.ToDateTime(control.AccessibleName).ToString("yyyy-MM-dd") + "'");
                     MessageBox.Show("Успешно удалено");
                 }
             }
             AdminBookingForm_Load(sender, e);
-        }*/
+        }
     }
 }
